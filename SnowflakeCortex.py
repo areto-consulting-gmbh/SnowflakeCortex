@@ -15,7 +15,6 @@ SEMANTIC_FILE = "semantic_model.yaml"
 
 DATABASE = st.secrets["DATABASE"]
 SCHEMA = st.secrets["SCHEMA"]
-STAGE = st.secrets["STAGE"]
 WAREHOUSE = st.secrets["WAREHOUSE"]
 
 # replace values below with your Snowflake connection information
