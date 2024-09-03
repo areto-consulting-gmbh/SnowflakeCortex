@@ -1,6 +1,6 @@
-name: Orders
+name: revenue
 tables:
-  - name: daily_nation_orders
+  - name: daily_nation_revenue
     description: Daily total orders revenue per nation.
     base_table:
       database: MAT_DV_GEN_DPC_DEV
@@ -13,8 +13,8 @@ tables:
         unique: false
         data_type: date
     dimensions:
-      - name: nation_name
-        expr: nation_name
+      - name: nation
+        expr: nation
         description: the single nations
         unique: false
         data_type: varchar
@@ -29,3 +29,22 @@ tables:
         synonyms: ["sales", "income"]
         default_aggregation: sum
         data_type: number
+
+
+
+verified_queries:
+  # For eval sample nlimtiaco_sc_3__0
+  - name: "yearly revenue per nation"
+    question: "yearly revenue per nation"
+    verified_at: 1714752498
+    verified_by: ado
+    sql: "
+SELECT 
+	year(orderdate) YEAR,
+	nation,
+	sum(revenue)
+FROM 
+	ACCESS_LAYER.fact_nation_orders
+GROUP BY 1,2
+ORDER BY 1,2;
+"
