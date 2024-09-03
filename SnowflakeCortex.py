@@ -19,8 +19,8 @@ WAREHOUSE = st.secrets["WAREHOUSE"]
 
 # replace values below with your Snowflake connection information
 #HOST = st.secrets["HOST"]
-ACCOUNT = st.secrets["ACCOUNT"]
-USER = st.secrets["USER"]
+ACCOUNT = 'aretoconsulting.eu-central-1'
+USER = 'MAT_DV_GEN'
 PASSWORD = st.secrets["PASSWORD"]
 ROLE = st.secrets["ROLE"]
 HOST = 'aretoconsulting.eu-central-1.snowflakecomputing.com'
@@ -32,7 +32,7 @@ st.write(WAREHOUSE)
 
 st.write(ACCOUNT)
 st.write(USER)
-st.write(PASSWORD)
+#st.write(PASSWORD)
 st.write(ROLE)
 st.write(HOST)
 
