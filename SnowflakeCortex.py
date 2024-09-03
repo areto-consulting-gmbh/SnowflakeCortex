@@ -80,6 +80,7 @@ def process_message(prompt: str) -> None:
             display_content(content=content, request_id=request_id)  # type: ignore[arg-type]
     st.session_state.messages.append(
         {"role": "assistant", "content": content, "request_id": request_id}
+    )
 
 
 
