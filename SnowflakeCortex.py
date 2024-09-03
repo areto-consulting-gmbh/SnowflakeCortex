@@ -6,9 +6,10 @@ import snowflake.connector
 import streamlit as st
 
 
-FILE = "semantic_model.yaml"
+SEMANTIC_FILE = "semantic_model.yaml"
 
 
+#read semantic model file
 
 
 
@@ -27,6 +28,15 @@ HOST = 'aretoconsulting.eu-central-1.snowflakecomputing.com'
 
 
 
+
+try:
+    with open(SEMANTIC_FILE, 'r') as file:
+        semantic_model = file.read()
+except FileNotFoundError:
+    st.error(f"Die Datei '{SEMANTIC_FILE}' wurde nicht gefunden.")
+    
+
+
 if 'CONN' not in st.session_state or st.session_state.CONN is None:
     st.session_state.CONN = snowflake.connector.connect(
         user=USER,
@@ -42,10 +52,11 @@ if 'CONN' not in st.session_state or st.session_state.CONN is None:
 
 
 def send_message(prompt: str) -> Dict[str, Any]:
+
     """Calls the REST API and returns the response."""
     request_body = {
         "messages": [{"role": "user", "content": [{"type": "text", "text": prompt}]}],
-        "semantic_model_file": f"@{DATABASE}.{SCHEMA}.{STAGE}/{FILE}",
+        "semantic_model": f"{semantic_model}",
     }
     resp = requests.post(
         url=f"https://{HOST}/api/v2/cortex/analyst/message",
@@ -125,7 +136,7 @@ def display_content(
 
 
 st.title("Cortex Analyst")
-st.markdown(f"Semantic Model: `{FILE}`")
+st.markdown(f"Semantic Model: `{semantic_model}`")
 
 
 
