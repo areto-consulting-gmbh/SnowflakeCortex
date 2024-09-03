@@ -26,6 +26,15 @@ ROLE = st.secrets["ROLE"]
 HOST = 'aretoconsulting.eu-central-1.snowflakecomputing.com'
 
 
+st.write(DATABASE)
+st.write(SCHEMA)
+st.write(WAREHOUSE)
+st.write(ACCOUNT)
+st.write(USER)
+st.write(PASSWORD)
+st.write(ROLE)
+st.write(HOST)
+
 try:
     with open(SEMANTIC_FILE, 'r') as file:
         semantic_model = file.read()
