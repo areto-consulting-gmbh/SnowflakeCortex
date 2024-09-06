@@ -22,6 +22,7 @@ tables:
           - ARGENTINA
           - BRAZIL
           - CANADA
+          - GERMANY
     measures:
       - name: revenue
         expr: revenue
