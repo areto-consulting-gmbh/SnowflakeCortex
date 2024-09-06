@@ -49,14 +49,3 @@ FROM
 GROUP BY 1,2
 ORDER BY 1,2;
 "
-
-  - name: "all available nations"
-    question: "all available nations"
-    verified_at: 1714752498
-    verified_by: ado
-    sql: "
-  SELECT distinct	
-    nation
-  FROM 
-    ACCESS_LAYER.fact_nation_orders;
-  "
