@@ -51,10 +51,10 @@ ORDER BY 1,2;
 "
 
   - name: "all available nations"
-      question: "all available nations"
-      verified_at: 1714752498
-      verified_by: ado
-      sql: "
+    question: "all available nations"
+    verified_at: 1714752498
+    verified_by: ado
+    sql: "
   SELECT distinct	
     nation
   FROM 
