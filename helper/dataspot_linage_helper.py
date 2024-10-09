@@ -1,4 +1,5 @@
 
+import streamlit as st
 import requests
 import json
 from requests_oauthlib import OAuth2Session
@@ -17,25 +18,25 @@ from snowflake.connector.pandas_tools import write_pandas
 
 
 # snowflake connection
-v_snowflake_account = 'aretoconsulting.eu-central-1'
-v_snowflake_user = 'MAT_DV_GEN'
-v_snowflake_password = 'a2YAM%&Sv2sL'
-v_snowflake_database = 'MAT_DV_GEN_DPC_DEV'
-v_snowflake_warehouse = 'ARETO_TRIAL_XS'
-v_snowflake_meta_data_schema = 'meta'
-v_snowflake_role = 'SYSADMIN'
+v_snowflake_account = st.secrets["ACCOUNT"]
+v_snowflake_user = st.secrets["USER"]
+v_snowflake_password = st.secrets["ACCOUNT"]
+v_snowflake_database = st.secrets["DATABASE"]
+v_snowflake_warehouse = st.secrets["WAREHOUSE"]
+v_snowflake_meta_data_schema = st.secrets["SCHEMA"]
+v_snowflake_role = st.secrets["ROLE"]
 
 
 # Matillion connection
-matillion_api_client_id = '902a5219-3ee2-46a2-97dd-8914c55ea58b'
-matillion_api_client_secret = 'GCUNr1REMhzG4KIvOBva2PCsaHvgwY7w'
+matillion_api_client_id = st.secrets["MATILLION_API_CLIENT_ID"]
+matillion_api_client_secret = st.secrets["MATILLION_API_CLIENT_SECRET"]
 
 
 # Dataspot connection
-v_dataspot_username = 'integration.jetvault@areto.de'
-v_dataspot_password = ')UU9)Stk%HZa$8fY7$'
-v_dataspot_client_id = '1bd81c44-fb84-46ee-a498-d6faa2da31de'
-v_dataspot_token_url = f'https://login.microsoftonline.com/organizations/oauth2/v2.0/token'
+v_dataspot_username = st.secrets["DATASPOT_USERNAME"]
+v_dataspot_password = st.secrets["DATASPOT_PASSWORD"]
+v_dataspot_client_id = st.secrets["DATASPOT_CLIENT_ID"]
+v_dataspot_token_url = st.secrets["DATASPOT_TOKEN_URL"]
 
 
 
