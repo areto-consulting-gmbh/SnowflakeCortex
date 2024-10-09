@@ -111,7 +111,7 @@ def get_stage_columns(stage_schema, stage_table):
 # Button to start sync
 #
 
-if st.button("Reset", type="primary"):
+if st.button("Synchronize source systems to Dataspot", type="primary"):
 
     st.write("Starting source system syncronisation")
 
