@@ -20,7 +20,7 @@ from snowflake.connector.pandas_tools import write_pandas
 # snowflake connection
 v_snowflake_account = st.secrets["ACCOUNT"]
 v_snowflake_user = st.secrets["USER"]
-v_snowflake_password = st.secrets["ACCOUNT"]
+v_snowflake_password = st.secrets["PASSWORD"]
 v_snowflake_database = st.secrets["DATABASE"]
 v_snowflake_warehouse = st.secrets["WAREHOUSE"]
 v_snowflake_meta_data_schema = st.secrets["SCHEMA"]
