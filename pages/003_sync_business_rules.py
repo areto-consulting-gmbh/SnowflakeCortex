@@ -249,7 +249,7 @@ if st.button("Synchronize business rules to Dataspot", type="primary"):
                 v_payload = {
                             "_type": "attribute",
                             "label": br_column['LABEL'],
-                            "order": br_colusmn['ORDER'],                        
+                            "order": br_column['ORDER'],                        
                             "parentId" : v_classifier_id,
                             "modelId" : v_reporting_uuid,
                             "status": "WORKING"                        
