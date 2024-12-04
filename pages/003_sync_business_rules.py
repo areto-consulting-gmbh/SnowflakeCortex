@@ -41,6 +41,7 @@ def get_br_schemas():
             FROM 
                 meta.BUSINESS_RULES	
             """
+    
 
     # Execute the query and fetch results into a DataFrame
     df = pd.read_sql_query(query, conn)
